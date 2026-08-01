@@ -1,0 +1,19 @@
+version: "3.9"
+
+services:
+
+  xampp:
+
+    build: .
+
+    container_name: xampp
+
+    ports:
+      - "80:80"
+
+    volumes:
+      - ./src:/opt/lampp/htdocs
+
+    tty: true
+
+    stdin_open: true

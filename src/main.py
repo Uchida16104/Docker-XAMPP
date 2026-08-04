@@ -63,48 +63,45 @@ a = 123
 b = -123
 print(f"{a:+} {b:+}")
 print(f"{a:-} {b:-}")
-print(f"{n:#}")        # 123
-print(f"{n:#b}")       # 0b1111011
-print(f"{n:#o}")       # 0o173
-print(f"{n:#x}")       # 0x7b
-print(f"{n:#X}")       # 0X7B
-print(f"{n:08}")       # 00000123
-print(f"{n:08b}")      # 01111011
-print(f"{n:08o}")      # 00000173
-print(f"{n:08x}")      # 0000007b
-print(f"{n:08X}")      # 0000007B
+print(f"{n:#}")        
+print(f"{n:#b}")       
+print(f"{n:#o}")       
+print(f"{n:#x}")       
+print(f"{n:#X}")       
+print(f"{n:08}")       
+print(f"{n:08b}")      
+print(f"{n:08o}")      
+print(f"{n:08x}")      
+print(f"{n:08X}")      
 n = 12.3456
-print(f"{n:.2f}")      # 12.35
-print(f"{n:8.2f}")     #    12.35
-print(f"{n:.2e}")      # 1.23e+01
-print(f"{n:.2E}")      # 1.23E+01
-print(f"{n:.2g}")      # 1.23
-print(f"{n:.2%}")      # 1234.56%
+print(f"{n:.2f}")      
+print(f"{n:8.2f}")     
+print(f"{n:.2e}")      
+print(f"{n:.2E}")      
+print(f"{n:.2g}")      
+print(f"{n:.2%}")      
 name = "Yamada"
 age = 36
 print(f"{name=}, {age=}")
 byte_string = b"\xe3\x81\x82"
-utf8_string = byte_string.decode()    # バイト列から文字列に変換
+utf8_string = byte_string.decode()
 print(utf8_string)
-
 utf8_string = "あ"
-byte_string = utf8_string.encode()    # 文字列からバイト列に変換
+byte_string = utf8_string.encode()
 print(byte_string)
 utf8_str = "あ"
-utf8_bytes = utf8_str.encode('utf-8')             # UTF-8バイト列: b'\xe3\x81\x82'
-sjis_bytes = utf8_str.encode('sjis')              # Shift_JISバイト列: b'\x82\xa0'
-cp932_bytes = utf8_str.encode('cp932')            # CP932バイト列: b'\x82\xa0'
-eucjp_bytes = utf8_str.encode('euc_jp')           # EUC-JPバイト列: b'\xa4\xa2'
-jis_bytes = utf8_str.encode('iso2022_jp')         # ISO-2022-JPバイト列: b'\x1b$B$"\x1b(B'
-
-# UTF8/SJIS/CP932/EUC/JISバイト列からUnicode文字列への変換
-utf8_str = utf8_bytes.decode('utf-8')             # あ
-utf8_str = sjis_bytes.decode('sjis')              # あ
-utf8_str = cp932_bytes.decode('cp932')            # あ
-utf8_str = eucjp_bytes.decode('euc_jp')           # あ
+utf8_bytes = utf8_str.encode('utf-8')
+sjis_bytes = utf8_str.encode('sjis')
+cp932_bytes = utf8_str.encode('cp932')
+eucjp_bytes = utf8_str.encode('euc_jp')
+jis_bytes = utf8_str.encode('iso2022_jp')
+utf8_str = utf8_bytes.decode('utf-8')
+utf8_str = sjis_bytes.decode('sjis')
+utf8_str = cp932_bytes.decode('cp932')
+utf8_str = eucjp_bytes.decode('euc_jp')
 utf8_str = jis_bytes.decode('iso2022_jp')
 # coding: utf-8
-print(len("あいうえお"))        # Python 2だと15、Python 3だと5
+print(len("あいうえお"))
 print(len(u"あいうえお"))
 str = """A simple example module
 This module is ...
@@ -112,16 +109,16 @@ This module is ...
 str = "Hello \
 world!"
 print("Hello " "world!")
-print("%s" % "ABC")         #=> ABC
-print("%d" % 123)           #=> 123
-print("%f" % 1.23)          #=> 1.230000
-print("%x" % 255)           #=> ff
-print("%o" % 255)           #=> 377
-print("%%%d" % 80)          #=> %80
-print("|%5s|" % 'ABC')       #=> |  ABC| : 右寄せ5文字分
-print("|%-5s|" % 'ABC')      #=> |ABC  | : 左寄せ5文字分
-print("|%5d|" % 123)         #=> |  123| : 右寄せ5桁
-print("|%-5d|" % 123)        #=> |123  | : 左寄せ5桁
-print("|%+5d|" % 123)        #=> | +123| : ±符号付き
-print("|%5.2f|" % 1.23)      #=> | 1.23| : 全体桁数.少数点以下の桁数
-print("|%05d|" % 123)        #=> |00123| : 0埋め
+print("%s" % "ABC")
+print("%d" % 123)
+print("%f" % 1.23)          
+print("%x" % 255)           
+print("%o" % 255)           
+print("%%%d" % 80)          
+print("|%5s|" % 'ABC')      
+print("|%-5s|" % 'ABC')      
+print("|%5d|" % 123)         
+print("|%-5d|" % 123)        
+print("|%+5d|" % 123)        
+print("|%5.2f|" % 1.23)      
+print("|%05d|" % 123)

@@ -1,6 +1,6 @@
-print("Hello world!")
+print("Hello world!\n")
 a = 5; b = 3; c = a + b
-print(c)
+print(c+"\n")
 total = 123 \
       + 456 \
       + 789
@@ -11,14 +11,14 @@ a = 3
 if a == 5:
     print("AAA")
     print("BBB")
-print("CCC")
-print(3)
-print([1, 2, 3])
-print((1, 2, 3))
-print({'k1':10, 'k2':20})
-print("AAA", "BBB")
-print("AAA", end="")
-print("BBB")
-print("My name is %s." % "Tanaka")
-print("%s is %d years old." % ("Tanaka", 28))
-print("%(name)s is %(age)d years old." % {'name': "Tanaka", 'age': 28})
+print("CCC\n")
+print(3+"\n")
+print([1, 2, 3]+"\n")
+print((1, 2, 3)+"\n")
+print({'k1':10, 'k2':20}+"\n")
+print("AAA\n", "BBB\n")
+print("AAA\n", end="")
+print("BBB\n")
+print("My name is %s." % "Tanaka\n")
+print("%s is %d years old.\n" % ("Tanaka", 28))
+print("%(name)s is %(age)d years old.\n" % {'name': "Tanaka", 'age': 28})

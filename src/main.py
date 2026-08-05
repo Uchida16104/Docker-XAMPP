@@ -293,12 +293,6 @@ except Exception as e:
     raise MyError() from e
 except Exception:
     raise MyError() from None
-f = 5
-assert f == 5 
-if __debug__:
-    if not expression: raise AssertionError
-if __debug__:
-    if not expression1: raise AssertionError(expression2)
 def myfunc():
     pass
 class MyClass:

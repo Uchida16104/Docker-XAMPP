@@ -293,3 +293,72 @@ except Exception as e:
     raise MyError() from e
 except Exception:
     raise MyError() from None
+f = func()
+assert f == 5 
+if __debug__:
+    if not expression: raise AssertionError
+if __debug__:
+    if not expression1: raise AssertionError(expression2)
+def myfunc():
+    pass
+class MyClass:
+    pass
+x = 5
+y = [1, 2, 3]
+z = MyClass()
+del x, y, z
+exec("print('Hello')")
+exec("print(global_x, local_y)", {'global_x': 100}, {'local_y': 200})
+c = 3
+match c:
+    case 1:
+        print("One")
+    case 2:
+        print("Two")
+    case 3:
+        print("Three")
+    case _:
+        print("Other")
+def add(x, y):
+    print(x + y)
+add(3, 5) 
+def add(x, y):
+    ans = x + y
+    return ans
+n = add(3, 5)
+print(n)
+def func():
+    return 3, "ABC"
+n, s = func()
+print(n, s)
+def repeat_msg(msg, repeat=3):
+    for i in range(repeat):
+        print(msg)
+repeat_msg('Hello')
+repeat_msg('Yahho', repeat=5)
+def func(a, b, *, c):
+   print("a=%s, b=%s, c=%s" % (a, b, c))
+func("A", "B", c="C")
+func("A", "B", "C")
+def func(a, b, /, c):
+   print("a=%s, b=%s, c=%s" % (a, b, c))
+func("A", "B", "C")
+func("A", "B", c="C")
+func(a="A", b="B", c="C")
+def func(a1, a2, *args, **kwargs):
+    print(a1)
+    print(a2)
+    print(args)
+    print(kwargs)
+func('A', 'B', 'C', 'D', k1='K1', k2='K2')
+def func(a1, a2, *args, **kwargs):
+    print(a1)                    
+    print(a2)                    
+    print(args)                  
+    print(kwargs)                
+args = ('C', 'D')
+kwargs = {'k1': 'K1', 'k2': 'K2'}
+func('A', 'B', *args, **kwargs)
+def func(x, y):
+    """A sample function"""
+    return x + y

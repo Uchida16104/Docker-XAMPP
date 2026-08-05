@@ -122,3 +122,98 @@ print("|%-5d|" % 123)
 print("|%+5d|" % 123)        
 print("|%5.2f|" % 1.23)      
 print("|%05d|" % 123)
+value1 = 123
+_value1 = 123
+test_value = 123
+TEST_VALUE = 123
+PI = 3.14
+MAX_BUFFER_SIZE = 1024
+"""A sample module"""
+class MyClass:
+    """A sample class"""
+    def myfunc(self, x, y):
+        """A sample function"""
+        return x + y
+a = [10, 20, 30, 40]
+colors = [
+    'red',
+    'green',
+    'blue',
+]
+a = [10, 'ABC']
+a = [1, 2, 3, 4, 5]
+for n in a:
+    print(n)
+a = ['A', 'B', 'C', 'D', 'E', 'F', 'G']
+a1 = a[0]
+a2 = a[2]
+a = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+a1 = a[2:4]
+a2 = a[2:]
+a3 = a[:4]
+a = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+a1 = a[1:8:2]
+a = ['A', 'B', 'C', 'D', 'E', 'F', 'G']
+a1 = a[-1]
+a2 = a[-3:-1]
+print([1, 2, 3] + [4, 5, 6])
+print(len([1, 2, 3]))
+a = [[1, 2], [3, 4], [5, 6]]
+for list in a:
+    for n in list:
+        print(n)
+a = (10, 20, 30, 40)
+a = (10)
+a = (10,)
+a1 = [10, 20, 30, 40]
+a2 = (10, 20, 30, 40)
+a1[2] = 60
+print(list((1, 2, 3)))
+print(tuple([1, 2, 3]))
+def get_date():
+    return 2022, 10, 9
+year, month, day = get_date()
+print("%04d/%02d/%02d" % (year, month, day))
+d = {'Yamada': 30, 'Suzuki': 40, 'Tanaka': 80}
+d1 = d['Yamada']
+d2 = d['Suzuki']
+d3 = d['Tanaka']
+d['Kimura'] = 60
+d = {'Yamada': 30, 'Suzuki': 40, 'Tanaka': 80}
+for k, v in d.items():
+    print(k, v)
+for k in d.keys():
+    print(k, d[k])
+for v in d.values():
+    print(v)
+for k, v in d.items():
+    print(k, v)
+a = [1, 2, 3]
+def double(x): return x * 2
+print(list(map(double, a)))
+print(list(map(lambda x: x * 2, a)))
+print([x * 2 for x in a])
+a = [1, 2, 3]
+def isodd(x): return x % 2
+print(list(filter(isodd, a)))
+print(list(filter(lambda x: x % 2, a)))
+print([x for x in a if x % 2])
+a = [1, 2, 3]
+print([x * 2 for x in a])
+print([x * 2 for x in a if x == 3])
+print([[x, x * 2] for x in a])
+print([(x, x * 2) for x in a])
+b = [4, 5, 6]
+print([x * y for x in a for y in b])
+print([a[i] * b[i] for i in range(len(a))])
+a = set(['red', 'blue', 'green'])
+b = set(['green', 'yellow', 'white'])
+print(a)
+print(b)
+print(a - b)
+print(a | b)
+print(a & b)
+print(a ^ b)
+print('green' in a)
+a.add('black')
+print(a)

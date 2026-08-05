@@ -333,7 +333,6 @@ repeat_msg('Yahho', repeat=5)
 def func(a, b, *, c):
    print("a=%s, b=%s, c=%s" % (a, b, c))
 func("A", "B", c="C")
-func("A", "B", "C")
 def func(a, b, /, c):
    print("a=%s, b=%s, c=%s" % (a, b, c))
 func("A", "B", "C")

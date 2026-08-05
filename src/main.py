@@ -337,7 +337,6 @@ def func(a, b, /, c):
    print("a=%s, b=%s, c=%s" % (a, b, c))
 func("A", "B", "C")
 func("A", "B", c="C")
-func(a="A", b="B", c="C")
 def func(a1, a2, *args, **kwargs):
     print(a1)
     print(a2)

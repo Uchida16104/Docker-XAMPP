@@ -212,3 +212,89 @@ print(a ^ b)
 print('green' in a)
 a.add('black')
 print(a)
+err = 0
+print("OK" if err == 0 else "NG")
+s = "ABCDEF"
+if (len := len(s)) > 5:
+    print("LONG")
+else:
+    print("SHORT")
+num = 12
+if num > 10:
+    print("BIG")
+    print("BIG")
+    print("BIG")
+num = 12
+if num > 10:
+    print("BIG")
+else:
+    print("SMALL")
+num = 12
+if num > 10:
+    print("BIG")
+elif num == 10:
+    print("NORMAL")
+else:
+    print("SMALL")
+n = 0
+while n < 10:
+    print(n)
+    n += 1
+n = 0
+while n < 10:
+    print(n)
+    n += 1
+else:
+    print('END')
+for n in [1, 2, 3]:
+    print(n)
+for n in (1, 2, 3):
+    print(n)
+for c in "ABC":
+    print(c)
+for k in {'one': 1, 'two': 2, 'three': 3}:
+    print(k)                                
+for n in [1, 2, 3]:
+    print(n)
+else:
+    print('END')
+for n in range(10):
+    print(n)
+for n in range(10):
+    if n == 5:
+        break
+    print(n)
+    if n == 5:
+        continue
+    print(n)
+str = 'ABC'
+try:
+    c = str[5]
+except IOError:
+    print('IOError')
+except IndexError:
+    print('IndexError')
+except:
+    print('Unknown')
+else:
+    print('Other')
+finally:
+    print('Finally')
+try:
+    xxx
+except SystemError as e:
+    print("SystemError")
+    print(e)
+try:
+    raise SystemError('Error message')
+except SystemError as e:
+    print("SystemError")
+    print(e)
+except Exception as e:
+    raise e
+except Exception:
+    raise MyError()
+except Exception as e:
+    raise MyError() from e
+except Exception:
+    raise MyError() from None

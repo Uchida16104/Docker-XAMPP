@@ -281,11 +281,6 @@ else:
 finally:
     print('Finally')
 try:
-    xxx
-except SystemError as e:
-    print("SystemError")
-    print(e)
-try:
     raise SystemError('Error message')
 except SystemError as e:
     print("SystemError")

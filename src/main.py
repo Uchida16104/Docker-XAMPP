@@ -189,13 +189,9 @@ for k, v in d.items():
     print(k, v)
 a = [1, 2, 3]
 def double(x): return x * 2
-print(list(map(double, a)))
-print(list(map(lambda x: x * 2, a)))
 print([x * 2 for x in a])
 a = [1, 2, 3]
 def isodd(x): return x % 2
-print(list(filter(isodd, a)))
-print(list(filter(lambda x: x % 2, a)))
 print([x for x in a if x % 2])
 a = [1, 2, 3]
 print([x * 2 for x in a])

@@ -381,7 +381,6 @@ print(cnt())
 myfunc = lambda x, y: x + y
 print(myfunc(3, 5))
 a = [1, 2, 3]
-print(list(map(lambda x: x ** 2, a)))
 class MyRange:
     def __init__(self, max):
         self._max = max

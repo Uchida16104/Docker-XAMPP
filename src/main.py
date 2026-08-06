@@ -354,3 +354,212 @@ func('A', 'B', *args, **kwargs)
 def func(x, y):
     """A sample function"""
     return x + y
+count = 0
+def func1():
+    print(count)
+def func2():
+    global count
+    count += 1
+def func():
+    for k in globals().keys():
+        print("GLOBAL: %s = %s" % (k, globals()[k]))
+    for k in locals().keys():
+        print("LOCAL: %s = %s" % (k, locals()[k]))
+func()
+count = 999
+def counter():
+    count = 0             
+    def count_up():
+        nonlocal count    
+        count += 1
+        return count
+    return count_up
+
+cnt = counter()
+print(cnt())              
+print(cnt())              
+myfunc = lambda x, y: x + y
+print(myfunc(3, 5))
+a = [1, 2, 3]
+print(list(map(lambda x: x ** 2, a)))
+class MyRange:
+    def __init__(self, max):
+        self._max = max
+
+    def __iter__(self):
+        self._count = 0
+        return self
+    def __next__(self):
+        result = self._count
+        if result >= self._max:
+            raise StopIteration
+        self._count += 1
+        return result
+for n in MyRange(5):
+    print(n)
+print(cnt())
+def funcA(list):
+    ret = []
+    for n in list:
+        ret.append(n * 2)
+    return ret
+for n in funcA([1, 2, 3, 4, 5]):
+    print(n)
+def funcB(list):
+    for n in list:
+        yield n * 2
+for n in funcB([1, 2, 3, 4, 5]):
+    print(n)
+def mydecolater(func):
+    def wrapper():
+        print("start")
+        func()
+        print("end")
+    return wrapper
+@mydecolater
+def hello():
+    print("hello")
+hello() 
+def mydecolater(func):
+    import functools
+    @functools.wraps(func)
+    def wrapper(*args, **kwargs):
+        print("Funcname:", func.__name__)
+        print("Arguments:", args)
+        print("Keywords:", kwargs)
+        ret = func(*args, **kwargs)
+        print("Return:", ret)
+        return ret
+    return wrapper
+@mydecolater
+def func(msg1, msg2, flag=1, mode=2):
+    """A sample function"""
+    print("----", msg1, msg2, "----")
+    return 1234
+n = func("Hello", "Hello2", flag=1)
+print(n)
+print(repr(func))
+print(func.__doc__)
+class MyClass:
+    """A simple example class"""
+    def __init__(self):
+        self.name = ""
+    def getName(self):
+        return self.name
+    def setName(self, name):
+        self.name = name
+a = MyClass()
+a.setName("Tanaka")
+print(a.getName())
+class MyClass:
+    def __init__(self):
+        self.name = ""
+a1 = MyClass()
+a1.name = "Tanaka"
+
+a2 = MyClass()
+a2.name = "Suzuki"
+print(a1.name)
+print(a2.name)
+class MyClass:
+    PI = 3.14
+print(MyClass.PI)
+class MyClass:
+    count = 0
+    def __init__(self):
+        MyClass.count += 1
+a1 = MyClass()
+a2 = MyClass()
+print(MyClass.count)
+class MyClass:
+    pass
+a1 = MyClass()
+a1.name2 = "Tanaka"
+MyClass.PI2 = 3.141593
+class MyClass:
+    PI = 3.14
+a1 = MyClass()
+a2 = MyClass()
+print(a1.PI)
+a1.PI = 3.141593
+print(a1.PI)
+print(a2.PI)
+class MyClass:
+    name = ""
+    def setName(self, name):
+        self.name = name
+a = MyClass()
+a.setName("Tanaka")
+class MyClass:
+    def __init__(self):
+        self.name = "tanaka"
+        self._name = "yamada"
+        self.__name = "suzuki"
+
+    def hello(self): print('hello')
+    def _hello(self): print('hello')
+    def __hello(self): print('hello')
+a = MyClass()
+print(a.name)
+a.hello()
+print(a._MyClass__name)
+a._MyClass__hello()
+class MyClass:
+    def __init__(self, name):
+        self.name = name
+    def getName(self):
+        return self.name
+a = MyClass("Tanaka")
+print(a.getName())
+class MyClass:
+    def __init__(self):
+        print("INIT!")
+    def __del__(self):
+        print("DEL!")
+a = MyClass()
+del a
+class MyClass:
+    def __init__(self, name):
+        self.name = name
+    def __str__(self):
+        return "My name is " + self.name
+a = MyClass("Yamada")
+print(a)
+class MyClass:
+    def hello(self):
+        print("Hello")
+class MyClass2(MyClass):
+    def world(self):
+        print("World")
+a = MyClass2()
+a.hello()
+a.world()
+class MyClass:
+    def hello(self):
+        print("Hello")
+class MyClass2(MyClass):
+    def hello(self):
+        print("HELLO")
+a = MyClass2()
+a.hello()
+class MyClass1(object):
+    def __init__(self):
+       self.val1 = 123
+class MyClass2(MyClass1):
+    def __init__(self):
+        super(MyClass2, self).__init__()
+        self.val2 = 456
+a = MyClass2()
+print(a.val1)
+print(a.val2)
+class MyClassA:
+    def funcA(self):
+        print("MyClassA:funcA")
+class MyClassB:
+    def funcB(self):
+        print("MyClassB:funcB")
+class MyClassC(MyClassA, MyClassB):
+    pass
+a = MyClassC()
+a.funcA()
+a.funcB()
